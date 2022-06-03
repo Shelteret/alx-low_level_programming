@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
  * main - prints the lowercase alphabet in reverse,
@@ -9,13 +7,12 @@
 */
 int main(void)
 {
-	char lowwecase;
+	int i;
 
-	for (lowercase = 'z'; lowercase >= 'a'; lowercase--)
+	for (i = 122; lowercase >= 96; i--)
 	{
-		putchar(lowercase);
+		putchar(i);
 	}
-
 	putchar('\n');
 	return (0);
 }
