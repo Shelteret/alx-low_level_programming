@@ -1,5 +1,7 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
  * main - Determines if a string is greater than 5
  *
