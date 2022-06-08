@@ -1,0 +1,27 @@
+#include <stdio.h>
+/**
+ * main - sum of even-valued Fibonacci sequence terms < 4000000.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	unsigned long f1 = 0, f2 = 1, fsum;
+	float t_sum;
+
+	while (1)
+	{
+		fsum = f1 + f2;
+		if (fsum > 4000000)
+			break;
+
+		if ((fsum % 2) == 0)
+			t_sum += fsum;
+
+		f1 = f2;
+		f2 = fsum;
+	}
+	printf("%.0f\n", t_sum);
+
+	return (0);
+}
