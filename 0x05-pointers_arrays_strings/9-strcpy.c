@@ -15,7 +15,7 @@ char *_strcpy(char *d, char *s)
 		*(d + c) = *(s + c);
 		if (*(s + c) == '\0')
 			break;
-		c++
+		c++;
 	}
 	return (d);
 }
