@@ -8,18 +8,18 @@
  */
 int main(void)
 {
-	int a = 0, b = 0;
+	int a = 0, c = 0;
 	time_t t;
 
 	srand((unsigned int) time(&t));
-	while (b < 2772)
+	while (c < 2772)
 	{
 		a = rand() % 128;
-		if ((a + b) > 2772)
+		if ((a + c) > 2772)
 			break;
-		b = b + a;
-		printf("%b", a);
+		c = c + a;
+		printf("%c", a);
 	}
-	printf("%b\n", (2772 - b));
+	printf("%c\n", (2772 - c));
 	return (0);
 }
