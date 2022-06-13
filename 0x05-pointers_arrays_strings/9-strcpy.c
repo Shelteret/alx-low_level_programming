@@ -10,9 +10,12 @@ char *_strcpy(char *d, char *s)
 {
 	int c = 0;
 
-	for (; s[c] != '\0'; c++)
+	while (c >= 0)
 	{
-		d[c] = s[c];
+		*(d + c) = *(s + c);
+		if (*(s + c) == '\0')
+			break;
+		c++
 	}
 	return (d);
 }
