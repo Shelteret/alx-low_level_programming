@@ -7,25 +7,22 @@
  */
 char *rot13(char *s)
 {
-	int i, rot_a = 13, j = 0;
-	char toswap[] = {'A', 'N', 'a', 'n', 'B', 'O', 'b', 'o', 'C', 'P',
-		'c', 'p', 'D', 'Q', 'd', 'q', 'E', 'R', 'e', 'r', 'F', 'S', 'f',
-		's', 'G', 'T', 'g', 't', 'H', 'U', 'h', 'u', 'I', 'V', 'i', 'v',
-		'J', 'W', 'j', 'w', 'K', 'X', 'k', 'x', 'L', 'Y', 'l', 'y', 'M',
-		'Z', 'm', 'z'};
+	int c = 0, i;
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (s[j] != '\0')
+	while (*(s + c) != '\0')
 	{
-		for (i = 0; i <= 51; i++)
+		for (i = 0; i < 52; i++)
 		{
-			if (s[j] == toswap[i])
+			if (*(s + c) == a[i])
 			{
-				s[j] = s[j] + rot_a;
-				i = 51;
+				*(s + c) = rot13[i];
+				break;
 			}
-			rot_a = rot_a * -1;
 		}
-		j++;
+		c++;
 	}
+
 	return (s);
 }
