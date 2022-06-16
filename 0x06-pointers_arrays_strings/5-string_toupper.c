@@ -3,7 +3,7 @@
 /**
  * string_toupper - changes all lowercase letters of a string to uppercase.
  * @s: input
- * Return:pointer to dest
+ * Return: pointer to dest
  */
 char *string_toupper(char *s)
 {
@@ -13,7 +13,7 @@ char *string_toupper(char *s)
 	{
 		if ((*(s + c) >= 97) && (*(s + c) <= 122))
 			*(s + c) = *(s + c) - 32;
-		c++
+		c++;
 	}
 
 	return (s);
