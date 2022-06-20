@@ -16,6 +16,6 @@ void print_chessboard(char (*a)[8]);
 		{
 			_putchar(*(*(c + a) + d));
 		}
-		_putchar('\n');
+	_putchar('\n');
 	}
 }
