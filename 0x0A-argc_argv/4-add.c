@@ -4,7 +4,7 @@
 /**
  * main - entry
  * @argc: arguments
- * @argv: arryas
+ * @argv: arrays
  * Return: 0
  */
 int main(int argc, char *argv[])
