@@ -1,40 +1,41 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
+
 /**
- * main - Show the result from an operation of two integers
+ * main - checks code
  * @argc: How many arguments I have
  * @argv: My string of strings
  * Return: Nothing.
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	if (argc == 4)
+	int a, b;
+	int (*operation)(int, int);
+
+	if (argc != 4)
 	{
-		int a, b, final;
-
-		if (*argv[1] >= '0' && *argv[1] <= '9')
-			a = atoi(argv[1]);
-
-		else
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		if (*argv[3] >= '0' && *argv[3] <= '9')
-			b = atoi(argv[3]);
-		else
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		/*Direct traded result*/
-		final = (*get_op_func(argv[2]))(a, b);
-		printf("%d\n", final);
-		return (0);
+		printf("Error\n");
+		exit(98);
 	}
-	printf("Error\n");
-	exit(98);
+
+	if (argv[2][1])
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	operation = get_op_func(argv[2]);
+
+	if (operation == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", operation(a, b));
 	return (0);
 }
+
