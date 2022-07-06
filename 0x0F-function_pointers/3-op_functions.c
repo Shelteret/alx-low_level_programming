@@ -1,39 +1,65 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
 /**
- * main - Show the result from an operation of two integers
- * @argc: How many arguments I have
- * @argv: My string of strings
- * Return: Nothing.
+ * op_add - adds two numbers.
+ * @a: first number.
+ * @b: second number.
+ * Return: add.
  */
-int main(int argc, char **argv)
+int op_add(int a, int b)
 {
-	if (argc == 4)
+	return (a + b);
+}
+
+/**
+ * op_sub - subctracts two numbers.
+ * @a: first number.
+ * @b: second number.
+ * Return: Difference
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * op_mul - multiplies two numbers.
+ * @a: first number
+ * @b: second number
+ * Return: product
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ *  op_div - divides two numbers.
+ *  @a: first number
+ *  @b: second number
+ * Return: division
+ */
+int op_div(int a, int b)
+{
+	if (b == 0)
 	{
-		int a, b, final;
-
-		if (*argv[1] >= '0' && *argv[1] <= '9')
-			a = atoi(argv[1]);
-
-		else
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		if (*argv[3] >= '0' && *argv[3] <= '9')
-			b = atoi(argv[3]);
-		else
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		/*direct the results and the traded to match to redirect*/
-		final = (*get_op_func(argv[2]))(a, b);
-		printf("%d\n", final);
-		return (0);
+		printf("Error\n");
+		exit(100);
 	}
-	printf("Error\n");
-	exit(98);
-	return (0);
+	return (a / b);
+}
+
+/**
+ * op_mod - calculates the module of two numbers.
+ * @a: first number
+ * @b: second number.
+ * Return: remainder of division
+ */
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a % b);
 }
