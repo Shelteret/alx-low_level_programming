@@ -5,7 +5,7 @@
  * @n: input
  * Return: Sum
  */
-int sum_them_all(const unsigned int n, ...);
+int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int a;
 	va_list list;
